@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active: dev
+---
+spring: 
+  profiles: dev
+  application:
+    name: microcloud-config-server-dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://edmin:hello@eureka-dev.com:6001/eureka
+  instance:
+    instance-id: eureka-dev.com
+    prefer-ip-address: true   # 底部显示IP地址
+---
+spring:
+  profiles: beta
+  application:
+    name: microcloud-config-server-beta
+eureka:
+  client:
+    service-url:
+      defaultZone: http://edmin:hello@eureka-beta.com:7001/eureka
+  instance:
+    instance-id: eureka-beta.com
+    prefer-ip-address: true   # 底部显示IP地址
+---
+spring:
+  profiles: product
+  application:
+    name: microcloud-config-server-product
+eureka:
+  client:
+    service-url:
+      defaultZone: http://edmin:hello@eureka-product.com:8001/eureka
+  instance:
+    instance-id: eureka-product.com
+    prefer-ip-address: true   # 底部显示IP地址
